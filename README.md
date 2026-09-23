@@ -1,5 +1,7 @@
 # TOKEN 焚化爐
 
+**繁體中文** | [English](README.en.md)
+
 ### Codex Execution Policy：讓執行回到交付本身
 
 Codex 有時會把 token 花在重複規劃、修理非必要前置條件、沒有新證據的重試，或結果已經完成後繼續加做檢查。這份**輕量 AGENTS 執行原則**把判斷寫清楚：先抓住可驗收的結果，走最短的可行路徑，保留必要驗證，完成後就交付。
@@ -63,4 +65,4 @@ Done when: 指定段落已整併，其他內容保留，備份與差異可核對
 
 ## 公開範圍
 
-此儲存庫公開的材料限 [README.md](README.md)、[POLICY.md](POLICY.md)、[VALIDATION.md](VALIDATION.md) 與審過內容的公開圖片素材。不要加入完整全域 AGENTS、備份、config、帳號資訊、原始任務紀錄或本機 runtime 產物。
+此儲存庫公開的材料限繁體中文 [README.md](README.md)、英文 [README.en.md](README.en.md)、[POLICY.md](POLICY.md)、[VALIDATION.md](VALIDATION.md) 與審過內容的公開圖片素材。不要加入完整全域 AGENTS、備份、config、帳號資訊、原始任務紀錄或本機 runtime 產物。
