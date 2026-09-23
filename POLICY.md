@@ -1,6 +1,6 @@
 # 共用執行原則
 
-這份是局部整併參考；不取代本機既有權限、業務、安全、工具路由或明確技能呼叫規則。
+這份是 Windows、macOS、Linux 共用的 Codex 執行原則，供各機局部整併；不取代本機既有權限、業務、安全、工具路由或明確技能呼叫規則。實際設定位置與工具能力仍以各機環境為準。
 
 ## Coding Discipline
 
@@ -19,4 +19,4 @@
 - Retry a failed path only when observations support a changed next action. A new hypothesis must be grounded in the observed failure and offer a distinguishing check; rewording a hypothesis is not progress. Otherwise switch to an available supported path; if none remains, report the precise blocker and preserve progress.
 - Once the requested result and necessary verification are complete, deliver. Do not add unrequested improvements, review rounds, or scope. Keep these decisions in existing task context; do not create per-check reports or a new tracking framework.
 
-部署時保留本機已有的特定技能啟用邊界。此檔省略 Windows 專用流程與本機技能名稱，並非授权刪除或放寬原本規則。
+部署時保留本機已有的特定技能啟用邊界。此檔省略 Windows 專用流程與本機技能名稱，並非授權刪除或放寬原本規則。
