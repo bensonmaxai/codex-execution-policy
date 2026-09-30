@@ -35,6 +35,22 @@ flowchart TD
 
 完整文字見 [POLICY.md](POLICY.md)；上表與流程圖是閱讀導引，以該檔為準。
 
+## 原生代理設定（2026-09-30）
+
+新增一組已在 Windows 實測的可選角色設定：主代理負責協調與驗收，依任務需要才開子代理。
+
+| 角色 | 模型 | 思考度 | 用途 |
+| --- | --- | --- | --- |
+| 主代理 | GPT-6.1 Sol | Ultra | 協調、整合、最終驗收 |
+| explorer | GPT-6.1 Sol | Low | 有界線的唯讀探索與查找 |
+| worker | GPT-6.1 Sol | Medium | 範圍明確的實作與修正 |
+| default | GPT-6.1 Sol | High | 模糊需求、跨模組分析、獨立審查 |
+| reviewer | GPT-6 Astra | XHigh | 重要或高風險變更的獨立唯讀審查 |
+
+設定與套用方式見 [MODEL-ROUTING.md](MODEL-ROUTING.md)；可重用範本在 [templates/](templates/)。主代理／worker／reviewer 的新 session 載入值已核對；worker 實際修碼後 **16/16 測試通過**，reviewer 找出 **5/5 已知根因、無誤報**。完整界線見 [MODEL-ROUTING-VALIDATION.md](MODEL-ROUTING-VALIDATION.md)。
+
+這是可選的設定組合，不是固定開滿代理的流程，也沒有證明為所有任務最省錢或最準。採用執行原則不需要同時更換模型；只有明確選擇這組配置時才局部整併範本。
+
 ## 實測到哪裡？
 
 2026-09-23 在 Windows 部署，2026-09-24 彙整驗證。以下是**單次隔離測試與部署證據**，不是長期效能統計；細節與限制見 [VALIDATION.md](VALIDATION.md)。
@@ -65,4 +81,4 @@ Done when: 指定段落已整併，其他內容保留，備份與差異可核對
 
 ## 公開範圍
 
-此儲存庫公開的材料限繁體中文 [README.md](README.md)、英文 [README.en.md](README.en.md)、[POLICY.md](POLICY.md)、[VALIDATION.md](VALIDATION.md) 與審過內容的公開圖片素材。不要加入完整全域 AGENTS、備份、config、帳號資訊、原始任務紀錄或本機 runtime 產物。
+此儲存庫公開的材料限說明文件、[POLICY.md](POLICY.md)、驗證摘要、[templates/](templates/) 中經審查的最小設定片段與角色範本，以及審過內容的公開圖片素材。不要加入完整全域 AGENTS、完整 config、備份、帳號資訊、原始任務紀錄或本機 runtime 產物。

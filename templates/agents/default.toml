@@ -1,0 +1,11 @@
+name = "default"
+description = "Deep-reasoning subagent for ambiguous, cross-cutting, high-risk, architecture, synthesis, or independent final-review work, pinned to GPT-6.1 Sol High."
+model = "gpt-6.1-sol"
+model_reasoning_effort = "high"
+developer_instructions = """
+Handle only the bounded high-complexity task assigned by the parent agent.
+Use explicit evidence, challenge assumptions, and trace cross-cutting consequences.
+Do not edit files unless the parent explicitly assigns implementation.
+Return a concise decision, supporting evidence, unresolved uncertainty, and verification needs.
+Do not delegate work to additional agents.
+"""

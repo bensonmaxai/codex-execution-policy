@@ -1,0 +1,5 @@
+# Merge these keys into the effective main-agent configuration.
+# This is a fragment, not a replacement for the existing config.toml.
+# Check account, model and client support before selecting ultra.
+model = "gpt-6.1-sol"
+model_reasoning_effort = "ultra"

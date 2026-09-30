@@ -40,3 +40,7 @@
 - https://learn.chatgpt.com/docs/config-file/config-reference
 - https://learn.chatgpt.com/docs/app-server
 - https://learn.chatgpt.com/docs/hooks
+
+## 2026-09-30：原生代理配置
+
+另一次驗證使用 `codex-cli 0.159.0`，涵蓋 Sol worker 的實際修碼、Astra reviewer 的唯讀審查，以及新 session 的模型／思考度載入值。它與上述 2026-09-23 的停止能力測試是不同案例；完整配置、結果與限制見 [MODEL-ROUTING-VALIDATION.md](MODEL-ROUTING-VALIDATION.md)。

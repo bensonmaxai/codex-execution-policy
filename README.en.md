@@ -37,6 +37,24 @@ flowchart TD
 
 Read [POLICY.md](POLICY.md) for the operative rules. The table and flowchart are reading aids; the policy file governs if wording differs.
 
+## Native agent preset (2026-09-30)
+
+This optional preset was tested on Windows. The primary coordinates and accepts the result, spawning agents only when the task benefits from them.
+
+| Role | Model | Reasoning effort | Scope |
+| --- | --- | --- | --- |
+| Primary | GPT-6.1 Sol | Ultra | Coordination, integration, final acceptance |
+| explorer | GPT-6.1 Sol | Low | Bounded read-only discovery |
+| worker | GPT-6.1 Sol | Medium | Scoped implementation and fixes |
+| default | GPT-6.1 Sol | High | Ambiguous or cross-cutting analysis and independent review |
+| reviewer | GPT-6 Astra | XHigh | Independent read-only review of important or high-risk changes |
+
+See [MODEL-ROUTING.md](MODEL-ROUTING.md) for setup and [templates/](templates/) for reusable files. Fresh-session metadata confirmed the primary, worker, and reviewer settings. The worker made a real code change that passed **16/16 tests**; the reviewer found **5/5 known root causes with no false positives**. The detailed [validation record](MODEL-ROUTING-VALIDATION.md) is in Traditional Chinese.
+
+Selectively merge the two keys in `templates/config.fragment.toml`, place the four agent files in the effective personal agent directory, and merge the delegation rules into the effective AGENTS file. Preserve existing permissions, tools, account settings, and capacity limits; verify model access and supported effort levels first. The setup guide documents the checks and rollback boundaries.
+
+This does not require spawning every role or establish the cheapest or most accurate setup for every task. The execution policy works independently of this optional model preset.
+
 ## What was tested?
 
 The rules were deployed on Windows on 2026-09-23, and the validation record was compiled on 2026-09-24. These are **one-off isolated tests and deployment evidence**, not long-term performance statistics. See [VALIDATION.md](VALIDATION.md) for details and limitations; that record is currently in Traditional Chinese.
@@ -67,4 +85,4 @@ To roll back, reverse only this change. If the file has changed again since depl
 
 ## Public scope
 
-This repository's public materials are limited to the Traditional Chinese [README.md](README.md), English [README.en.md](README.en.md), [POLICY.md](POLICY.md), [VALIDATION.md](VALIDATION.md), and reviewed public artwork. Do not add a complete global AGENTS file, backups, config, account information, raw task logs, or local runtime artifacts.
+Public materials are limited to documentation, [POLICY.md](POLICY.md), validation summaries, reviewed minimal config fragments and agent templates in [templates/](templates/), and reviewed public artwork. Do not add a complete global AGENTS file, a full config, backups, account information, raw task logs, or local runtime artifacts.
